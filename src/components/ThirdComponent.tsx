@@ -3,6 +3,7 @@ import * as React from 'react';
 
 
 
+
 interface IState{
 
   weathers:any[],
@@ -16,7 +17,6 @@ interface IState{
   
  
 }
-
 
 
 export default class ThirdComponent extends React.Component<{}, IState> {

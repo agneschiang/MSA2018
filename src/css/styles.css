@@ -115,7 +115,9 @@ h1 {
 
   .table td {
     text-shadow:1px 1px 0 #fff;
-    padding:12px 20px 12px 20px;}
+    padding:12px 20px 12px 20px;
+    border: 1px solid #dddddd;
+  }
   
   
   
