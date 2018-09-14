@@ -1,4 +1,6 @@
+import Button from '@material-ui/core/Button';
 import * as React from 'react';
+
 
 
 
@@ -46,7 +48,8 @@ export default class ThirdComponent extends React.Component<{}, IState> {
 
   public handleSubmit(event: any) {
     const city = this.state.location;
-    const api = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=4cc8aca9ef202233ba22ab2b26cec92c';    
+    const api = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=4cc8aca9ef202233ba22ab2b26cec92c';  
+     
     fetch(api)
     .then(response => {
       if (response.ok) {
@@ -84,10 +87,13 @@ export default class ThirdComponent extends React.Component<{}, IState> {
       <h2>Temperature in 5 days and 5 hours time </h2>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Location:
-            <input type="text" placeholder="Enter the Loaction" value={this.state.location} onChange={this.handleChange} />
+          Location: 
+             <input type="text" placeholder="Enter the Loaction" value={this.state.location} onChange={this.handleChange} />
           </label>
-          <input type="submit" className = "Button" value="Submit" />
+          
+          <Button variant="contained" type="submit" size="medium" style={{maxWidth: '40px', maxHeight: '40px', minWidth: '10px', minHeight: '10px'}} > Submit </Button>
+          
+
         </form>
         <div className="showWeather">
         <table className="table">

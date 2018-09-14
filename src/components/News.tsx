@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Loader from 'react-loader-spinner'
 
 interface IState{
     news: any[], 
@@ -44,7 +45,11 @@ export default class ThirdComponent extends React.Component<{}, IState>{
           }
       
           if(isLoading){
-            return<p>Loading ...</p>;
+            return (
+                <p>The page is Loading: 
+                    <Loader type="TailSpin" color="#00BFFF" height={80} width={80}/></p>
+            
+            );
           }
 
         return (
@@ -54,7 +59,7 @@ export default class ThirdComponent extends React.Component<{}, IState>{
                         <tr><th/><th/></tr>
                         {
                             news.map((item) => 
-                                <tr key={item}><td><img src={item.thread.main_image} height="200" width="220" /> 
+                                <tr key={item}><td><img src={item.thread.main_image} height="200" width="250" /> 
                                 <br/><br/>{item.thread.title_full} <br/><br/>{item.text}<br/><br/>
                                 <a href={item.thread.url}> More...</a></td><td> Date: {item.published}</td></tr>
                             

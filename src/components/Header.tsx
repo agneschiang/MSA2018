@@ -17,6 +17,7 @@ export const Header: React.StatelessComponent<{}> = () => {
                         <Link style={{color: "white"}} to="/">Weather Forcast / News </Link>
                         <Link to="/ThirdComponent"> Weather </Link>
                         <Link to="/News"> News</Link>
+                        
                     </Typography>
                 </Toolbar>
             </AppBar>
