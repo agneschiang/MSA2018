@@ -7,7 +7,7 @@ interface IState{
     error: any
 }
 
-const API = 'http://webhose.io/filterWebContent?token=7da966c4-3117-4ce7-a94a-b77760be77b0&format=json&sort=crawled&q=New%20Zealand%20site_type%3Anews';
+const API = 'https://webhose.io/filterWebContent?token=7da966c4-3117-4ce7-a94a-b77760be77b0&format=json&sort=crawled&q=New%20Zealand%20site_type%3Anews';
 
 
 export default class ThirdComponent extends React.Component<{}, IState>{

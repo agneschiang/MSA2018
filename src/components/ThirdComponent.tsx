@@ -1,19 +1,10 @@
 import Button from '@material-ui/core/Button';
 import * as React from 'react';
 
-
-
-
-
-
 interface IState{
 
   weathers:any[],
-  table: any[],
-  date: any,
-  time: any,
   location: any, 
-  address: any, 
   isLoading: any, 
   error: any
   
@@ -26,11 +17,7 @@ export default class ThirdComponent extends React.Component<{}, IState> {
     super(props)
     this.state = {
       weathers:[],
-      date: " ",
-      time: " ",
-      table: [], 
-      location: " ",
-      address: "", 
+      location: "",
       isLoading: false, 
       error: null
           
@@ -48,7 +35,7 @@ export default class ThirdComponent extends React.Component<{}, IState> {
 
   public handleSubmit(event: any) {
     const city = this.state.location;
-    const api = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=4cc8aca9ef202233ba22ab2b26cec92c';  
+    const api = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=4cc8aca9ef202233ba22ab2b26cec92c';  
      
     fetch(api)
     .then(response => {
@@ -97,13 +84,16 @@ export default class ThirdComponent extends React.Component<{}, IState> {
         </form>
         <div className="showWeather">
         <table className="table">
+        <tbody>
             <tr><th> Date </th><th> Description </th><th> Temperature Range </th></tr>
             {
               weathers.map((hit) =>
               
                 <tr key={hit}><td>{hit.dt_txt}</td><td>{hit.weather[0].main} and {hit.weather[0].description}. High {hit.main.temp_max}. Winds is at {hit.wind.speed} km/h </td>
-                <td><img src="https://imgur.com/19uj8tj.jpg" height="25" width="25"/>{hit.main.temp_min}°C - {hit.main.temp_max}°C<br/><img src="https://imgur.com/JSTATIY.jpg" height="25" width="25"/> Pressure: {hit.main.pressure}<br/><img src="https://imgur.com/Xz9sgO5.jpg" height="25" width="25"/> {hit.wind.speed} km/h <br/> <img src="https://imgur.com/YkohH8M.jpg" height="25" width="17"/> {hit.main.humidity}%</td></tr>
+                <td><img src="https://imgur.com/19uj8tj.jpg"  height="25" width="25"/>{hit.main.temp_min}°C - {hit.main.temp_max}°C<br/><img src="https://imgur.com/JSTATIY.jpg" height="25" width="25"/> Pressure: {hit.main.pressure}<br/><img src="https://imgur.com/Xz9sgO5.jpg" height="25" width="25"/> {hit.wind.speed} km/h <br/> <img src="https://imgur.com/YkohH8M.jpg" height="25" width="17"/> {hit.main.humidity}%</td></tr>
               )}
+
+          </tbody>
           </table>
         </div>
       </div>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export const Header: React.StatelessComponent<{}> = () => {
     return (
-            <AppBar position="static">
+            <AppBar position="static"  style= {{ backgroundColor: '#999'}}>
                 <Toolbar>
                     <IconButton  aria-label="Menu" color="inherit">
                         <MenuIcon aria-haspopup="true"/>
