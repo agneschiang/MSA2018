@@ -89,8 +89,8 @@ export default class ThirdComponent extends React.Component<{}, IState> {
             {
               weathers.map((hit) =>
               
-                <tr key={hit}><td>{hit.dt_txt}</td><td><img src={"https://openweathermap.org/img/w/" + hit.weather[0].icon + ".png"}/>{hit.weather[0].main} and {hit.weather[0].description}. High {Math.round(hit.main.temp_max -273.15)}. Winds is at {hit.wind.speed} km/h </td>
-                <td><img src="https://imgur.com/19uj8tj.jpg"  height="25" width="25"/>{Math.round(hit.main.temp_min -273.15)}°C - {Math.round(hit.main.temp_max  -273.15)}°C<br/><img src="https://imgur.com/JSTATIY.jpg" height="25" width="25"/> Pressure: {hit.main.pressure}<br/><img src="https://imgur.com/Xz9sgO5.jpg" height="25" width="25"/> {hit.wind.speed} km/h <br/> <img src="https://imgur.com/YkohH8M.jpg" height="25" width="17"/> {hit.main.humidity}%</td></tr>
+                <tr key={hit}><td>{hit.dt_txt}</td><td><img src={"https://openweathermap.org/img/w/" + hit.weather[0].icon + ".png"}/>{Math.round((hit.main.temp_max  -273.15) * 100) / 100}. Winds is at {hit.wind.speed} km/h </td>
+                <td><img src="https://imgur.com/19uj8tj.jpg"  height="25" width="25"/>{Math.round((hit.main.temp_min -273.15)*100) / 100}°C - {Math.round((hit.main.temp_max  -273.15) * 100) / 100}°C<br/><img src="https://imgur.com/JSTATIY.jpg" height="25" width="25"/> Pressure: {hit.main.pressure}<br/><img src="https://imgur.com/Xz9sgO5.jpg" height="25" width="25"/> {hit.wind.speed} km/h <br/> <img src="https://imgur.com/YkohH8M.jpg" height="25" width="17"/> {hit.main.humidity}%</td></tr>
               )}
 
           </tbody>
